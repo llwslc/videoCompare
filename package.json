@@ -1,0 +1,12 @@
+{
+  "name": "videoCompare",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "fluent-ffmpeg": ">=0.0.0",
+    "heapdump": ">=0.0.0",
+    "node-resemble-js": ">=0.0.0",
+    "mysql": ">=0.0.0",
+    "async": ">=0.0.0"
+  }
+}
