@@ -32,15 +32,42 @@
 # sortVideo.js
 
 
+![image](https://github.com/llwslc/VideoCompare/blob/master/Screenshots/sortVideo.png)
+
+
+* 按照出现的次数排序
+* 如 1-123, 1-124, 1-225 算一次
+
+
 
 # sortTime.js
+
+
+![image](https://github.com/llwslc/VideoCompare/blob/master/Screenshots/sortTime.png)
+
+
+* 排序出现的期数
+* 如 1-123 表示在第一期出现过
 
 
 
 # getEveryTime.js
 
 
+![image](https://github.com/llwslc/VideoCompare/blob/master/Screenshots/getEveryTime.png)
+
+
+* 将某些文件夹内文件格式转为时间, 即将秒数转为 hh:mm:ss 格式
+
+
 
 # getAppearanceTime.js
+
+
+![image](https://github.com/llwslc/VideoCompare/blob/master/Screenshots/getAppearanceTime.png)
+
+
+* 将某些文件夹内文件格式转为时间
+* 如果时间相邻, 则只计算第一次出现的时间
 
 

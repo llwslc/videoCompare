@@ -1,6 +1,7 @@
+// 按照出现的次数排序
+// 1-123, 1-124, 1-225 算一次
+
 var fs = require('fs');
-
-
 
 var secondToTimemark = function(seconds) {
   if (typeof timemark === 'string') {
