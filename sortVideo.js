@@ -3,6 +3,20 @@
 
 var fs = require('fs');
 
+var getStringLength = function (str)
+{
+  var strLen = 0;
+  for (var i = 0; i < str.length; i++) {
+    var c = str.charCodeAt(i);
+    if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+      strLen++
+    } else {
+      strLen+=2
+    }
+  };
+  return strLen;
+}
+
 var sortPeopleVideo = function(people1, people2) {
   return people2.length - people1.length
 }
@@ -26,8 +40,8 @@ for (var j = 0; j < dirArr.length; j++) {
   var peopleObj = {}
   var peopleArr = []
   var peopleCode = dirArr[j];
-  for (var k = dirArr[j].length; k < 10; k++) {
-    peopleCode += "  "
+  for (var k = getStringLength(dirArr[j]); k < 16; k++) {
+    peopleCode += " "
   };
   peopleArr.push(peopleCode)
   for (var i = 0; i < picArr.length; i++) {
@@ -35,6 +49,9 @@ for (var j = 0; j < dirArr.length; j++) {
     peopleObj[video] = 0
   };
   for (key in peopleObj) {
+    if (key < 10) {
+      key = key + " "
+    }
     peopleArr.push(key)
   };
   peopleVideoArr.push(peopleArr)
