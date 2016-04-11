@@ -3,23 +3,19 @@
 
 var fs = require('fs');
 
-var secondToTimemark = function(seconds) {
-  if (typeof timemark === 'string') {
-    return timemark;
-  }
-
-  var sec_num = parseInt(seconds, 10); // don't forget the second param
-  var hours   = Math.floor(sec_num / 3600);
-  var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-  var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-  if (hours   < 10) {hours   = "0" + hours;}
-  if (minutes < 10) {minutes = "0" + minutes;}
-  if (seconds < 10) {seconds = "0" + seconds;}
-  var time    = hours + ':' + minutes + ':' + seconds;
-
-  return time;
-};
+var getStringLength = function (str)
+{
+  var strLen = 0;
+  for (var i = 0; i < str.length; i++) {
+    var c = str.charCodeAt(i);
+    if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+      strLen++
+    } else {
+      strLen+=2
+    }
+  };
+  return strLen;
+}
 
 var sortFileArr = function(file1, file2) {
   var fileName1 = file1.split("-")
@@ -59,8 +55,8 @@ for (var i = 0; i < dirArr.length; i++) {
   picArr = picArr.sort(sortFileArr)
   var peopleArr = []
   var peopleCode = dirArr[i];
-  for (var k = dirArr[i].length; k < 10; k++) {
-    peopleCode += "  "
+  for (var k = getStringLength(dirArr[i]); k < 16; k++) {
+    peopleCode += " "
   };
   peopleArr.push(peopleCode)
   var preVideo = 0;
