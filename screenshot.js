@@ -147,7 +147,6 @@ async.waterfall(fileFuncArr,
   function(err, res) {
     if (!!err) {
       console.log("file: " + err.file + " || err: " + err.err.message)
-      callback({err: err, file: videoFilePath}, null)
     } else {
       var endTime = new Date().getTime();
       console.log("All screenshot finish! time: " + parseInt((endTime - startTime)/1000) + " s");

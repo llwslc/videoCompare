@@ -71,3 +71,13 @@
 * 如果时间相邻, 则只计算第一次出现的时间
 
 
+
+# copyAppearanceFile.js
+
+
+![image](https://github.com/llwslc/VideoCompare/blob/master/Screenshots/copyAppearanceFile.png)
+
+
+* 将文件夹内第一次出现的文件拷贝到另一个文件夹内,便于截图
+* 如果时间相邻, 则只计算第一次出现的时间
+
