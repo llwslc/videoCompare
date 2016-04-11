@@ -2,6 +2,7 @@
 // 如 1-123 表示在第一期出现过
 
 var fs = require('fs');
+var pinyin = require('pinyin');
 
 var getStringLength = function (str)
 {
@@ -17,8 +18,17 @@ var getStringLength = function (str)
   return strLen;
 }
 
+var sortPeopleName = function(people1, people2) {
+  // 只考虑拼音首字母排序
+  var char1 = pinyin(people1[0], {style: pinyin.STYLE_NORMAL})[0][0][0]
+  var char2 = pinyin(people2[0], {style: pinyin.STYLE_NORMAL})[0][0][0]
+  return  char1.charCodeAt() - char2.charCodeAt()
+}
+
 var sortPeopleVideo = function(people1, people2) {
-  return people2.length - people1.length
+  var sortFlag = people2.length - people1.length
+  if (sortFlag == 0) {sortFlag = sortPeopleName(people1, people2)};
+  return sortFlag
 }
 
 var videoDate = [20160117, 20160124, 20160131, 20160214, 20160221, 20160228, 20160306, 20160313, 20160320, 20160327]
@@ -57,8 +67,10 @@ for (var j = 0; j < dirArr.length; j++) {
   peopleVideoArr.push(peopleArr)
 };
 
-peopleVideoArr.sort(sortPeopleVideo)
+peopleVideoArr = peopleVideoArr.sort(sortPeopleVideo)
 
 console.log(peopleVideoArr)
+
+
 
 
