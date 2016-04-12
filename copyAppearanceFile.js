@@ -47,10 +47,6 @@ var sortFileArr = function(file1, file2) {
   return resFlag
 }
 
-var formatTime = function(video, time) {
-  return videoDate[(video - 1)] + "-" + secondToTimemark(time)
-}
-
 var secondToTimemark = function(seconds) {
   if (typeof timemark === 'string') {
     return timemark;
@@ -70,7 +66,6 @@ var secondToTimemark = function(seconds) {
 };
 
 var filePath = 'c:/joker/audience_/'
-var videoDate = [20160117, 20160124, 20160131, 20160214, 20160221, 20160228, 20160306, 20160313, 20160320, 20160327]
 var sourcePath = '观众'
 var targetPath = '整理观众'
 var sourceFullPath = filePath + sourcePath + '/'

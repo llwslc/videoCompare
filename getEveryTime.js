@@ -38,7 +38,7 @@ var secondToTimemark = function(seconds) {
 };
 
 var filePath = 'c:/joker/audience_/观众/'
-var videoDate = [20160117, 20160124, 20160131, 20160214, 20160221, 20160228, 20160306, 20160313, 20160320, 20160327]
+var videoDate = [20160117, 20160124, 20160131, 20160214, 20160221, 20160228, 20160306, 20160313, 20160320, 20160327, 20160403, 20160410]
 var peopleDirArr = ['黑棉帽女','黑衣鼓掌女','眼镜女']
 
 for (var i = 0; i < peopleDirArr.length; i++) {
