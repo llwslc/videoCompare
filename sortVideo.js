@@ -58,6 +58,7 @@ for (var j = 0; j < dirArr.length; j++) {
     var video = picArr[i].split("-")[0]
     peopleObj[video] = 0
   };
+
   for (key in peopleObj) {
     if (key < 10) {
       key = key + " "
